@@ -72,7 +72,7 @@ function countdownTimer(targetDate) {
 
 // Initialize Countdown
 document.addEventListener("DOMContentLoaded", () => {
-    const targetDate = new Date("2024-11-25T10:00:00").getTime();
+    const targetDate = new Date("2024-12-01T11:00:00").getTime();
     countdownTimer(targetDate);
 });
 
@@ -91,13 +91,13 @@ const speed = 50;  // Kecepatan dalam milidetik
 // Fungsi untuk mulai menghitung dari 0 ke targetNumber
 function startCounting(element) {
     const targetNumber = parseInt(element.getAttribute('data-target'));
-    let currentNumber = 0;
+    let currentNumber = 30;
 
     const counter = setInterval(() => {
-        currentNumber++;
-        element.textContent = currentNumber;
+        currentNumber--;
+        element.textContent = String(currentNumber).padStart(2, '0');
 
-        if (currentNumber >= targetNumber) {
+        if (currentNumber <= targetNumber) {
             clearInterval(counter);
         }
     }, speed);
@@ -118,6 +118,8 @@ document.querySelectorAll('.wedding-date-count').forEach(element => {
     observer2.observe(element);
 });
 
+
+
 // COPY ACCOUNT NUMBER
 
 function copyAccountNumber(accountNumber) {
@@ -129,7 +131,7 @@ function copyAccountNumber(accountNumber) {
 }
 
  // Mengambil data RSVP ketika halaman dimuat
- fetch('https://yogi-putri-wedding-invitation.glitch.me/rsvps')
+ fetch('https://tema-4-rsvp-handle.glitch.me/rsvps')
  .then(response => response.json())
  .then(data => {
    data.forEach(item => {
@@ -167,7 +169,7 @@ function copyAccountNumber(accountNumber) {
  };
  
  // Submit form data
- fetch('https://yogi-putri-wedding-invitation.glitch.me/rsvp', {
+ fetch('https://tema-4-rsvp-handle.glitch.me/rsvp', {
    method: 'POST',
    headers: {
      'Content-Type': 'application/json'
@@ -208,7 +210,3 @@ const elements = document.querySelectorAll('.fade-in, .fade-slide, .swipe-left, 
 elements.forEach(element => {
     observer.observe(element);
 });
-
-
-
-
