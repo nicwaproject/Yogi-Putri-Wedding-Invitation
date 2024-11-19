@@ -471,6 +471,10 @@ nav {
     margin-top: 60px;
 }
 
+.event-day {
+    font-family: var(--font-family-2);
+}
+
 .date-time {
     margin-bottom: 5px;
 }
