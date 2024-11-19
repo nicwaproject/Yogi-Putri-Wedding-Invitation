@@ -118,8 +118,6 @@ document.querySelectorAll('.wedding-date-count').forEach(element => {
     observer2.observe(element);
 });
 
-
-
 // COPY ACCOUNT NUMBER
 
 function copyAccountNumber(accountNumber) {
@@ -131,7 +129,7 @@ function copyAccountNumber(accountNumber) {
 }
 
  // Mengambil data RSVP ketika halaman dimuat
- fetch('https://tema-4-rsvp-handle.glitch.me/rsvps')
+ fetch('https://yogi-putri-wedding-invitation.glitch.me/rsvps')
  .then(response => response.json())
  .then(data => {
    data.forEach(item => {
@@ -169,7 +167,7 @@ function copyAccountNumber(accountNumber) {
  };
  
  // Submit form data
- fetch('https://tema-4-rsvp-handle.glitch.me/rsvp', {
+ fetch('https://yogi-putri-wedding-invitation.glitch.me/rsvp', {
    method: 'POST',
    headers: {
      'Content-Type': 'application/json'
